@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <title>test site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+      
         body {
             /* 背景画像をCSSで指定 */
             background-image: url('./img/background.jpg');
@@ -28,6 +30,7 @@
 	    display: flex;             /* Flexboxを有効化 */
 	    justify-content: center;   /* 水平方向（左右）の中央揃え */
 	    align-items: center;       /* 垂直方向（上下）の中央揃え */
+	    height: 100%; /* htmlとbodyにheight: 100%が設定されていることが前提 */
 	    margin: 0;                 /* bodyのデフォルトのmarginをリセット */
         }
 
