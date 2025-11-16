@@ -1,11 +1,87 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
     <meta charset="utf-8" />
     <title>test site</title>
+    <style>
+        body {
+            /* 背景画像をCSSで指定 */
+            background-image: url('./img/background.jpg');
+
+            /* 画像の繰り返しを停止 */
+            background-repeat: no-repeat;
+
+            /* 画面全体を覆うように画像を拡大・縮小 (アスペクト比は維持) */
+            background-size: cover;
+
+            /* 画像の位置を中央に設定 */
+            background-position: center center;
+
+            /* スクロールしても背景画像は固定 (任意) */
+            background-attachment: fixed;
+
+            /* 画面全体の高さを確保 (コンテンツが少ない場合) */
+            min-height: 100vh;
+
+	    /* 中央揃えのために追加 */
+	    display: flex;             /* Flexboxを有効化 */
+	    justify-content: center;   /* 水平方向（左右）の中央揃え */
+	    align-items: center;       /* 垂直方向（上下）の中央揃え */
+	    margin: 0;                 /* bodyのデフォルトのmarginをリセット */
+        }
+
+	fieldset {
+            display: inline-block; /* 枠の幅をコンテンツに合わせる */
+            border: 2px solid white; 
+            padding: 20px;           
+            border-radius: 10px;
+
+	    /* bodyのFlexboxで中央配置するため、margin: 0; などでリセットが安全 */
+	    margin: 0;
+	}
+	
+	fieldset > div {
+	    /* 1. 横幅をコンテンツの幅に合わせる */
+	    display: inline-block;
+	    /* 1. Flexboxを有効化 */
+	    display: flex;
+	    /* 2. 垂直方向（cross-axis）で中央揃え */
+	    align-items: center; 
+	    /* 任意: ボタンとラベルの間に少しスペースを開ける */
+	    gap: 15px; 
+	    /* 任意: ラジオボタンのグループ全体に上下の余白 */
+	    margin-bottom: 20px;
+	}
+	
+	legend {
+	    color: white;
+	    font-size: 40px;
+	}
+
+	label {
+	    color: white;
+	    font-size: 40px;
+	}
+
+	input[type="radio"] {
+	    width: 40px; 
+	    height: 40px;
+	}
+    </style>
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-    <p>Hello World</p>
-    <p>こんにちは</p>
+  <fieldset>
+    <legend>Select Chord Type</legend>
+      <div>
+	<input type="radio" name="chord" id="triadcode"/>
+	<label for="triadcode">Triad Code</lable>
+      </div>
+      <div>
+	<input type="radio" name="chord" id="7thcode" checked/>
+	<label for="7thcode">7th Code</lable>
+      </div>
+  </fieldset>
 </body>
 </html>
